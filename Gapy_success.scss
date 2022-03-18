@@ -1,0 +1,126 @@
+:root {
+    --color-blue: #0094ff;
+    --color-white: #fff;
+    --curve: cubic-bezier(0.420, 0.000, 0.275, 1.155);
+  }
+
+  @mixin size($size) {
+    width: $size;
+    height: $size;
+  }
+
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+
+  body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-white);
+  }
+
+  .star {
+    position: absolute;
+    animation: grow 3s infinite;
+    fill: var(--color-blue);
+    opacity: 0;
+
+    &:nth-child(1) {
+      @include size(12px);
+      left: 12px;
+      top: 16px;
+    }
+
+    &:nth-child(2) {
+      @include size(18px);
+      left: 168px;
+      top: 84px;
+    }
+
+    &:nth-child(3) {
+      @include size(10px);
+      left: 32px;
+      top: 162px;
+    }
+
+    &:nth-child(4) {
+      @include size(20px);
+      left: 82px;
+      top: -12px;
+    }
+
+    &:nth-child(5) {
+      @include size(14px);
+      left: 125px;
+      top: 162px;
+    }
+
+    &:nth-child(6) {
+      @include size(10px);
+      left: 16px;
+      top: 16px;
+    }
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        animation-delay: $i*( 3.0s/2 );
+      }
+    }
+  }
+
+  .checkmark {
+    position: relative;
+    padding: 30px;
+    animation: checkmark 5m var(--curve) both;
+
+    &__check {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 10;
+      transform: translate3d(-50%, -50%, 0);
+      fill: var(--color-white);
+    }
+
+    &__background {
+      fill: var(--color-blue);
+      animation: rotate 35s linear both infinite;
+    }
+  }
+
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes grow {
+    0%, 100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+
+    50% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes checkmark {
+    0%, 100% {
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    10%, 50%, 90% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }

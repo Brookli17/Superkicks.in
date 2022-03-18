@@ -1,0 +1,27 @@
+
+
+
+h1{
+   font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+    font-size: 45px;
+    margin-top: 5%;
+}
+
+p{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+    font-size:  20px;
+    margin-bottom: 5px;
+
+}
+
+img:hover
+{
+    transition: all 0.3s ease 0s;
+    transform: scale(0.9);
+    
+
+}
+
+

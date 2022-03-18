@@ -1,0 +1,41 @@
+
+body{
+    background-color: rgb(243, 239, 233);
+}
+
+p{
+    text-align: center;
+    margin-top: 300px;
+    
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+}
+
+button
+{
+
+    
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+    background-color: rgb(46, 185, 100);
+    color: aliceblue;
+    font-size: larger;
+    border: 1px solid;
+    border-radius: 5px;
+
+    
+
+}
+
+button:hover
+{
+    transition: all 0.5s ease 0s;
+    transform: scale(0.9);
+    background-color: #dddddd;
+    color: black;
+    font-weight: 700;
+    
+
+}

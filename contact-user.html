@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="./images/hero.png" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact-Info</title>
+
+</head>
+<body>
+ <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&display=swap');
+
+*{
+  box-sizing: border-box;
+  font-family: 'Fira Sans', sans-serif;
+ 
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+  transition: all 0.3s ease 0s;
+    transform: scale(0.9);
+}
+
+.container {
+  border-radius: 10px;
+  max-width: 700px;
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: center;
+  background-color: #f2f2f2;
+  padding: 20px;
+
+  
+}
+
+h3{
+    margin-top: 30px;
+}
+
+</style>
+
+<body>
+
+<center><h3>Delivery Adress</h3></center>
+<form action="https://sheetdb.io/api/v1/m9riyihq77k5n" method="post" id="sheetdb-form"  >
+<div class="container">
+  
+
+    <label for="fname">Customer Name*</label>
+    <input type="text" id="fname" name="data[firstname]" placeholder="Your name.." required  >
+
+    <label for="lname">Phone-no*</label>
+    <input type="text" id="Phone-no" name="data[Phone-no]" placeholder="" required  >
+
+    <label for="lname">Email*</label>
+    <input type="text" id="email" name="data[email]" placeholder=""  required   >
+
+  
+    <label for="state"> State</label>
+    <select id="state" name="data[State]">
+      <option value="Select State">-----Select State------</option>
+        <option value="Maharashtra">Maharashtra</option>
+        <option value="Chhattisgarh">Chhattisgarh</option>
+        <option value="Gujarat">Gujarat</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Goa">Goa</option>
+        <option value="Bihar">Bihar</option> 
+        <option value="Assam">Assam</option>
+    </select>
+
+    <label for="city">City</label>
+    <input type="text" id="city" name="data[city]" placeholder="" required >
+
+    <label for="code">Area Code*</label>
+    <input type="text" id="code" name="data[area code]" placeholder="" required  >
+
+    <label for="street">Street/Road*</label>
+    <input type="text" id="street" name="data[street/road]" placeholder=""  required  >
+
+    <label for="room no">Buld_no/room_no</label>
+    <input type="text" id="room no" name="data[Buld_no/room_no]" placeholder=""  required  >
+
+
+
+
+     <input type="submit" value="Submit">
+  
+</div>
+</form>
+
+<script>
+  var form = document.getElementById('sheetdb-form');
+form.addEventListener("submit", e => {
+e.preventDefault();
+fetch(form.action, {
+    method : "POST",
+    body: new FormData(document.getElementById("sheetdb-form")),
+}).then(
+    response => response.json()
+).then((html) => {
+ 
+  window.open('paymentoptions.html', "_blank");
+
+});
+});
+</script>
+
+    
+
+</body>
+</html>

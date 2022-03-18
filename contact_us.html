@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+            <link rel="shortcut icon" href="./images/hero.png" type="image/x-icon" />
+        <meta charset="UTF-8" />
+        <title>Contact Us</title>
+
+        <link href="contact_us.html" rel="stylesheet" >
+
+        <link
+            href="https://unpkg.com/cirrus-ui"
+            type="text/css"
+            rel="stylesheet"
+        />
+
+        <link
+            href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Oswald"
+            rel="stylesheet"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+            integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+            crossorigin="anonymous"
+        />
+      
+        <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"
+        ></script>
+    </head>
+
+    <body>
+        <form  action="https://sheetdb.io/api/v1/fzusc2kvyjvyr" method="post" id="sheetdb-form"  >
+        <div class="hero fullscreen">
+            <div class="hero-body">
+                <div style="margin: auto">
+                    <form class="frame p-0" method="post">
+                        <div class="frame__body p-0">
+                            <div class="row p-0 level fill-height">
+                                <div class="col">
+                                    <div class="space xlarge"></div>
+                                    <div class="padded">
+                                        <h1 class="u-text-center u-font-alt">Contact Us</h1>
+                                        <div class="divider"></div>
+                                        <p class="u-text-center">You can contact us by filling the  form given below | Superkicks.in © Super Kicks India Pvt. Ltd. 2022</p>
+                                        <div class="divider"></div>
+
+                                        <div class="form-group">
+                                            <label class="form-group-label">
+                                                <span class="icon">
+                                                    <i class="fa-wrapper far fa-user"></i>
+                                                </span>
+                                            </label>
+                                            <input type="text" class="form-group-input" placeholder="Enter your name" name="data[user's name]" required />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="form-group-label">
+                                                <span class="icon">
+                                                    <i class="fa-wrapper far fa-envelope"></i>
+                                                </span>
+                                            </label>
+                                            <input type="email" class="form-group-input" placeholder="Enter your email"  name="data[email]"  required  />
+                                        </div>
+
+                                        <div class="form-section section-inline">
+                                            <div class="section-body row">
+                                                <div class="form-group col-6 pl-0">
+                                                    <label class="form-group-label">
+                                                        <span class="icon">
+                                                            <i class="fa-wrapper far fa-calendar"></i>
+                                                        </span>
+                                                    </label>
+                                                    <input type="date" class="form-group-input" placeholder="Enter your birthday (or not)" name="data[dob]"  required  />
+                                                </div>
+                                                <div class="form-group col-6 pr-0">
+                                                    <label class="form-group-label">
+                                                        <span class="icon">
+                                                            <i class="fa-wrapper fas fa-list"></i>
+                                                        </span>
+                                                    </label>
+                                                    <select class="select form-group-input" placeholder="Choose one" name="data[report for]"  required   >
+                                                        <option value="Bug Report" >Bug Report</option>
+                                                        <option  value="Feature Request" >Feature Request</option>
+                                                        <option  value="Other" >Other</option>
+                                                        
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <textarea placeholder="Tell us what's wrong"  name="data[msg]"   required  ></textarea>
+
+                                        <div class="form-ext-control form-ext-checkbox">
+                                            <input id="check1" class="form-ext-input" type="checkbox">
+                                            <label class="form-ext-label" for="check1">Send me a copy.</label>
+                                        </div>
+
+                                        <div class="space"></div>
+
+                                        <div class="btn-group u-pull-right">
+                                            <button class="btn-info">Send</button>
+                                        </div>
+
+                                    </div>
+                                    <div class="space xlarge"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </form>
+
+        <script>
+            var form = document.getElementById('sheetdb-form');
+          form.addEventListener("submit", e => {
+          e.preventDefault();
+          fetch(form.action, {
+              method : "POST",
+              body: new FormData(document.getElementById("sheetdb-form")),
+          }).then(
+              response => response.json()
+          ).then((html) => {
+           
+            window.open('req_recived.html');
+          
+          });
+          });
+          </script>
+          
+
+
+
+
+    </body>
+</html>
